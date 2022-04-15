@@ -12,7 +12,11 @@ import ru.job4j.dreamjob.services.CandidateService;
 @Controller
 public class CandidateController {
 
-    private final CandidateService service = CandidateService.instOf();
+    private final CandidateService service;
+
+    public CandidateController(CandidateService service) {
+        this.service = service;
+    }
 
     @GetMapping("/candidates")
     public String posts(Model model) {
@@ -31,7 +35,7 @@ public class CandidateController {
         return "redirect:/candidates";
     }
 
-    @GetMapping("/formAddCandidate/{candidateId}")
+    @GetMapping("/formUpdateCandidate/{candidateId}")
     public String formUpdatePost(Model model, @PathVariable("candidateId") int id) {
         model.addAttribute("candidate", service.findById(id));
         return "updateCandidate";

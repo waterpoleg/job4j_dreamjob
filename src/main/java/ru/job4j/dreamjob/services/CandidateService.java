@@ -1,17 +1,18 @@
 package ru.job4j.dreamjob.services;
 
+import org.springframework.stereotype.Service;
 import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.persistence.CandidateStore;
 
 import java.util.Collection;
 
+@Service
 public class CandidateService {
 
-    private static final CandidateService INST = new CandidateService();
-    private final CandidateStore store = CandidateStore.instOf();
+    private final CandidateStore store;
 
-    public static CandidateService instOf() {
-        return INST;
+    public CandidateService(CandidateStore store) {
+        this.store = store;
     }
 
     public void add(Candidate candidate) {
