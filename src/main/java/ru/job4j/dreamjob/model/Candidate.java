@@ -9,6 +9,7 @@ public class Candidate {
     private String name;
     private String description;
     private String created = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+    private boolean visible;
 
     public Candidate(int id, String name, String description) {
         this.id = id;
@@ -46,6 +47,14 @@ public class Candidate {
 
     public void setCreated(String created) {
         this.created = created;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 
     @Override
