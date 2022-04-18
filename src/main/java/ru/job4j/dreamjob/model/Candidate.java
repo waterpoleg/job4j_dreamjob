@@ -10,6 +10,7 @@ public class Candidate {
     private String description;
     private String created = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
     private boolean visible;
+    private byte[] photo;
 
     public Candidate(int id, String name, String description) {
         this.id = id;
@@ -55,6 +56,14 @@ public class Candidate {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
     }
 
     @Override
