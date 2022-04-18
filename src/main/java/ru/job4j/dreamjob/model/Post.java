@@ -10,6 +10,7 @@ public class Post {
     private String description;
     private String created = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
     private boolean visible;
+    private City city;
 
     public Post(int id, String name, String description) {
         this.id = id;
@@ -55,6 +56,14 @@ public class Post {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     @Override
