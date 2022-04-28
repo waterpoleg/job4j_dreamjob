@@ -12,10 +12,16 @@ public class Candidate {
     private boolean visible;
     private byte[] photo;
 
-    public Candidate(int id, String name, String description) {
+    public Candidate() {
+    }
+
+    public Candidate(int id, String name, String description, String created, boolean visible, byte[] photo) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.created = created;
+        this.visible = visible;
+        this.photo = photo;
     }
 
     public int getId() {
