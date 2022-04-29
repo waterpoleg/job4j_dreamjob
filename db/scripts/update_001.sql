@@ -21,3 +21,5 @@ CREATE TABLE users (
   email TEXT,
   password TEXT
 );
+
+ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);
