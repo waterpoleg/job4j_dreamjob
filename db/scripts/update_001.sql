@@ -15,3 +15,9 @@ CREATE TABLE candidate (
    visible BOOLEAN default false,
    photo bytea
 );
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email TEXT,
+  password TEXT
+);
