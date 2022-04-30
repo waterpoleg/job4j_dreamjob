@@ -18,7 +18,7 @@ public class UserDBStore {
         this.pool = pool;
     }
 
-    public User add(User user) {
+    public Optional<User> add(User user) {
         try (Connection cn = pool.getConnection();
              PreparedStatement ps = cn.prepareStatement(
                 "INSERT INTO users(email, password) VALUES (?, ?)",
@@ -36,7 +36,7 @@ public class UserDBStore {
             e.printStackTrace();
             user = null;
         }
-        return user;
+        return Optional.ofNullable(user);
     }
 
     public Optional<User> findUserByEmailAndPwd(String email, String password) {
