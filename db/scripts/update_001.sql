@@ -18,8 +18,6 @@ CREATE TABLE candidate (
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  email TEXT,
+  email TEXT UNIQUE,
   password TEXT
 );
-
-ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);
