@@ -28,6 +28,10 @@
                 <form th:action="@{/registration}" method="post">
                     <input type="hidden" name="id" value="0"/>
                     <div class="form-group">
+                        <label for="email">Имя</label>
+                        <input type="text" class="form-control" name="name" id="name">
+                    </div>
+                    <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" id="email">
                     </div>
