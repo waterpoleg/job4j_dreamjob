@@ -1,5 +1,5 @@
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  email TEXT UNIQUE,
+  email VARCHAR UNIQUE,
   password TEXT
 );
