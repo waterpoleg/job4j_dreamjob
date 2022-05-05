@@ -59,7 +59,13 @@ public class CandidateController {
     }
 
     @GetMapping("/formUpdateCandidate/{candidateId}")
-    public String formUpdatePost(Model model, @PathVariable("candidateId") int id) {
+    public String formUpdatePost(Model model, @PathVariable("candidateId") int id, HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
+            user = new User();
+            user.setName("Гость");
+        }
+        model.addAttribute("user", user);
         model.addAttribute("candidate", service.findById(id));
         return "updateCandidate";
     }
